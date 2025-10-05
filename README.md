@@ -43,6 +43,11 @@ A **Flask-based web game** where players guess 5-letter words, similar to Wordle
 
 ---
 
+## Demo
+
+*(Add screenshots or GIFs here of login, game play, admin reports.)*
+
+---
 
 ## Installation
 
@@ -60,7 +65,6 @@ python -m venv venv
 Windows:
 venv\Scripts\activate
 
-
 Mac/Linux:
 source venv/bin/activate
 
@@ -70,62 +74,63 @@ pip install -r requirements.txt
 5️⃣ Run the app
 python run.py
 
-
-Open in browser: http://127.0.0.1:5000
-
-Usage :
+## Usage
 
 Register / Login
 Register a new account or login with existing credentials.
 Admin accounts must be manually promoted in the database (is_admin=True).
 
-Playing the Game :
+### Playing the Game
 
 Enter 5-letter words to guess.
 Previous guesses are displayed with colors.
 Maximum 5 guesses per game.
 Maximum 3 games per day.
 
-Admin Reports :
+### Admin Reports
 
 Navigate to /admin/daily for the daily report.
 Navigate to /admin/user to search and view reports for a specific user.
 
-Tech Stack :
+### Tech Stack
 
 Backend: Python, Flask
 Frontend: HTML, CSS, JavaScript
-Database: SQLite 
+Database: SQLite (for local testing)
 Authentication: Flask-Login
 Version Control: Git & GitHub
 
-Folder Structure :
-
+### Folder Structure
 Guess_The_Word/
-├─ app/
-│  ├─ __init__.py
-│  ├─ models.py
-│  ├─ routes/
-│  │  ├─ auth.py
-│  │  ├─ game.py
-│  │  └─ admin.py
-│  └─ utils.py
-├─ static/
-│  ├─ css/style.css
-│  └─ js/main.js
-├─ templates/
-│  ├─ login.html
-│  ├─ register.html
-│  ├─ game.html
-│  └─ admin.html
-|     home.html
-├─ database/
-│  └─ guess_game.db
-├─ venv/
-├─ requirements.txt
+│
+├── app/
+│ ├── init.py
+│ ├── models.py
+│ ├── utils.py
+│ └── routes/
+│ ├── auth.py
+│ ├── game.py
+│ └── admin.py
+│
+├── templates/
+│ ├── login.html
+│ ├── register.html
+│ ├── game.html
+│ ├── admin.html
+│ └── home.html 
+│
+├── static/
+│ ├── css/
+│ │ └── style.css
+│ └── js/
+│ └── main.js
+│
+├── database/
+│ └── guess_game.db
+├── README.md
+└── venv/
 
-
-Future Enhancements:
+###Future Enhancements
 
 Deploy to Render or Railway for online access.
 Replace SQLite with PostgreSQL for scalability.
