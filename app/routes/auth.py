@@ -87,3 +87,4 @@ def logout():
 @home_bp.route('/home')
 def dashboard():
     return render_template('home.html')
+
