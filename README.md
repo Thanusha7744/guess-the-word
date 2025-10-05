@@ -1,6 +1,7 @@
 # Guess The Word 🎮
 
-Guess the word is a fun, web-based 5-letter word guessing game built with Flask. Players get limited tries with color-coded feedback, while admins can track daily activity and user performance through a clean dashboard. Fast, interactive, and easy to play!
+A **Flask-based web game** where players guess 5-letter words, similar to Wordle. Includes **player and admin functionalities**, daily and user-specific reports.
+
 ---
 
 ## Table of Contents
