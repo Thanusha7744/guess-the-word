@@ -6,8 +6,7 @@ A **Flask-based web game** where players guess 5-letter words, similar to Wordle
 
 ## Table of Contents
 
-- [Features](#features)  
-- [Demo](#demo)  
+- [Features](#features)    
 - [Installation](#installation)  
 - [Usage](#usage)  
 - [Admin Reports](#admin-reports)  
@@ -71,33 +70,29 @@ pip install -r requirements.txt
 python run.py
 
 ## Usage
+
 Register / Login
 Register a new account or login with existing credentials.
 Admin accounts must be manually promoted in the database (is_admin=True).
 
 Playing the Game
+
 Enter 5-letter words to guess.
-
 Previous guesses are displayed with colors.
-
 Maximum 5 guesses per game.
-
 Maximum 3 games per day.
 
 ## Admin Reports
-Navigate to /admin/daily for the daily report.
 
+Navigate to /admin/daily for the daily report.
 Navigate to /admin/user to search and view reports for a specific user.
 
 ## Tech Stack
+
 Backend: Python, Flask
-
 Frontend: HTML, CSS, JavaScript
-
-Database: SQLite (for local testing)
-
+Database: SQLite 
 Authentication: Flask-Login
-
 Version Control: Git & GitHub
 
 ## Folder Structure
@@ -132,12 +127,9 @@ Guess_The_Word/
 └── venv/
 
 ## Future Enhancements
+
 Deploy to Render or Railway for online access.
-
 Replace SQLite with PostgreSQL for scalability.
-
 Add leaderboard for daily top players.
-
 Add word categories and difficulty levels.
-
 Improve mobile responsiveness and animations.
