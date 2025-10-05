@@ -73,7 +73,7 @@ python run.py
 
 Open in browser: http://127.0.0.1:5000
 
-Usage:
+Usage :
 
 Register / Login
 Register a new account or login with existing credentials.
@@ -86,22 +86,21 @@ Previous guesses are displayed with colors.
 Maximum 5 guesses per game.
 Maximum 3 games per day.
 
-Admin Reports:
+Admin Reports :
 
 Navigate to /admin/daily for the daily report.
 Navigate to /admin/user to search and view reports for a specific user.
 
-Tech Stack:
+Tech Stack :
 
 Backend: Python, Flask
 Frontend: HTML, CSS, JavaScript
-Database: SQLite (for local testing)
-
+Database: SQLite 
 Authentication: Flask-Login
-
 Version Control: Git & GitHub
 
-Folder Structure
+Folder Structure :
+
 Guess_The_Word/
 ├─ app/
 │  ├─ __init__.py
@@ -119,12 +118,14 @@ Guess_The_Word/
 │  ├─ register.html
 │  ├─ game.html
 │  └─ admin.html
+|     home.html
 ├─ database/
 │  └─ guess_game.db
 ├─ venv/
 ├─ requirements.txt
 
-Future Enhancements :
+
+Future Enhancements:
 
 Deploy to Render or Railway for online access.
 Replace SQLite with PostgreSQL for scalability.
