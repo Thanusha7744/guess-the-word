@@ -43,18 +43,14 @@ A **Flask-based web game** where players guess 5-letter words, similar to Wordle
 
 ---
 
-## Demo
-
-*(Add screenshots or GIFs here of login, game play, admin reports.)*
-
 ---
 
 ## Installation
 
 ### 1️⃣ Clone the repository
 
-```bash
-git clone <your-github-repo-url>
+
+git clone <https://github.com/Thanusha7744/guess-the-word.git>
 cd Guess_The_Word
 
 2️⃣ Create a virtual environment
@@ -75,65 +71,73 @@ pip install -r requirements.txt
 python run.py
 
 ## Usage
-
 Register / Login
 Register a new account or login with existing credentials.
 Admin accounts must be manually promoted in the database (is_admin=True).
 
-### Playing the Game
-
+Playing the Game
 Enter 5-letter words to guess.
+
 Previous guesses are displayed with colors.
+
 Maximum 5 guesses per game.
+
 Maximum 3 games per day.
 
-### Admin Reports
-
+## Admin Reports
 Navigate to /admin/daily for the daily report.
+
 Navigate to /admin/user to search and view reports for a specific user.
 
-### Tech Stack
-
+## Tech Stack
 Backend: Python, Flask
+
 Frontend: HTML, CSS, JavaScript
+
 Database: SQLite (for local testing)
+
 Authentication: Flask-Login
+
 Version Control: Git & GitHub
 
-### Folder Structure
+## Folder Structure
+
 Guess_The_Word/
 │
 ├── app/
-│ ├── init.py
-│ ├── models.py
-│ ├── utils.py
-│ └── routes/
-│ ├── auth.py
-│ ├── game.py
-│ └── admin.py
+│   ├── init.py
+│   ├── models.py
+│   ├── utils.py
+│   └── routes/
+│       ├── auth.py
+│       ├── game.py
+│       └── admin.py
 │
 ├── templates/
-│ ├── login.html
-│ ├── register.html
-│ ├── game.html
-│ ├── admin.html
-│ └── home.html 
+│   ├── login.html
+│   ├── register.html
+│   ├── game.html
+│   ├── admin.html
+│   └── home.html
 │
 ├── static/
-│ ├── css/
-│ │ └── style.css
-│ └── js/
-│ └── main.js
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── main.js
 │
 ├── database/
-│ └── guess_game.db
+│   └── guess_game.db
 ├── README.md
 └── venv/
 
-###Future Enhancements
-
+## Future Enhancements
 Deploy to Render or Railway for online access.
+
 Replace SQLite with PostgreSQL for scalability.
+
 Add leaderboard for daily top players.
+
 Add word categories and difficulty levels.
+
 Improve mobile responsiveness and animations.
