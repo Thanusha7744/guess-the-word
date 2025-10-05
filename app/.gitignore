@@ -1,0 +1,41 @@
+# Virtual environment
+venv/
+ENV/
+env/
+.venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+
+# SQLite database files
+*.db
+*.sqlite3
+
+# Flask instance folder
+instance/
+
+# Environment variables
+.env
+.env.*
+
+# VS Code / IDE settings
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# MacOS / Windows system files
+.DS_Store
+Thumbs.db
+
+# Pytest cache
+.pytest_cache/
+
+# Coverage reports
+htmlcov/
+.coverage

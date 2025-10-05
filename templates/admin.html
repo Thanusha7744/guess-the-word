@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard - Guess the Word</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Admin Dashboard</h2>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flash">
+                    {% for category, message in messages %}
+                        <li class="flash-{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <nav>
+            <a href="{{ url_for('admin.daily_report') }}">Daily Report</a> |
+            <a href="{{ url_for('admin.user_report') }}">User Report</a> |
+            <a href="{{ url_for('auth.logout') }}">Logout</a>
+        </nav>
+
+        {% if report_type == 'daily' %}
+            <h3>Daily Report — {{ today }}</h3>
+            <p><strong>Distinct users who played today:</strong> {{ daily_users }}</p>
+            <p><strong>Correct guesses today:</strong> {{ daily_correct }}</p>
+
+        {% elif report_type == 'user' %}
+            <h3>User Report</h3>
+            <form method="POST" action="{{ url_for('admin.user_report') }}">
+                <label>Username:</label>
+                <input type="text" name="username" value="{{ username or '' }}" required>
+                <button type="submit">Get Report</button>
+            </form>
+
+            {% if report_data is not none %}
+                <h4>Report for user: {{ username }}</h4>
+                {% if report_data %}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Game ID</th>
+                                <th>Date</th>
+                                <th>Words Tried</th>
+                                <th>Correct Guesses</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in report_data %}
+                            <tr>
+                                <td>{{ row.game_id }}</td>
+                                <td>{{ row.date }}</td>
+                                <td>{{ row.words_tried }}</td>
+                                <td>{{ row.correct_guesses }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>No games found for this user.</p>
+                {% endif %}
+            {% endif %}
+
+        {% else %}
+            <p>Select a report from above.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

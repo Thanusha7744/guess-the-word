@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Play Game - Guess the Word</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Guess the Word</h2>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flash">
+                    {% for category, message in messages %}
+                        <li class="flash-{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        {% if not game_over %}
+        <form method="POST" id="guess-form">
+            <label>Enter 5-letter word:</label>
+            <input type="text" name="guess" maxlength="5" required autofocus>
+            <button type="submit">Submit Guess</button>
+        </form>
+        {% endif %}
+
+        <h3>Previous Guesses:</h3>
+        <div class="guesses">
+            {% if previous_guesses %}
+                {% for row in previous_guesses %}
+                    <div class="guess-row">
+                        {% for letter, color in row %}
+                            <span class="letter {{ color }}">{{ letter }}</span>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No guesses yet.</p>
+            {% endif %}
+        </div>
+
+        {% if game_over %}
+            {% if word %}
+                <p>The word was: <strong>{{ word }}</strong></p>
+            {% endif %}
+            <a class="btn" href="{{ url_for('game.play_game') }}">Start New Game</a>
+        {% endif %}
+    </div>
+</body>
+</html>

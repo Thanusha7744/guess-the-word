@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess the Word - Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container dashboard">
+        <h1>🎯 Guess The Word</h1>
+        <p class="subtitle">Welcome, {{ current_user.username }}!</p>
+
+        <div class="cards">
+            {% if current_user.is_admin %}
+            <a href="{{ url_for('admin.daily_report') }}" class="card admin-card">
+                <h3>📊 Daily Report</h3>
+                <p>View all users & correct guesses today</p>
+            </a>
+            <a href="{{ url_for('admin.user_report') }}" class="card admin-card">
+                <h3>👤 User Report</h3>
+                <p>Check reports for specific users</p>
+            </a>
+            {% endif %}
+            
+            <a href="{{ url_for('game.play_game') }}" class="card game-card">
+                <h3>🎮 Play Game</h3>
+                <p>Start guessing words now!</p>
+            </a>
+            <a href="{{ url_for('auth.logout') }}" class="card logout-card">
+                <h3>🚪 Logout</h3>
+                <p>End your session</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
