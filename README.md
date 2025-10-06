@@ -107,11 +107,10 @@ Authentication: Flask-Login
 Version Control: Git & GitHub
 
 ## Folder Structure
-
 Guess_The_Word/
 │
 ├── app/
-│   ├── init.py
+│   ├── __init__.py
 │   ├── models.py
 │   ├── utils.py
 │   └── routes/
@@ -120,6 +119,7 @@ Guess_The_Word/
 │       └── admin.py
 │
 ├── templates/
+│   ├── landing.html      
 │   ├── login.html
 │   ├── register.html
 │   ├── game.html
@@ -136,6 +136,7 @@ Guess_The_Word/
 │   └── guess_game.db
 ├── README.md
 └── venv/
+
 
 ## Future Enhancements
 
