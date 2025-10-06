@@ -8,19 +8,14 @@ from sqlalchemy import or_
 
 game_bp = Blueprint('game', __name__)
 
-# -----------------------------
-# Play Game Route
-# -----------------------------
+
 @game_bp.route('/game', methods=['GET', 'POST'])
 @login_required
 def play_game():
     today = date.today()
     day_start = datetime.combine(today, time.min)
 
-    # -----------------------------
-    # Count only COMPLETED games today
-    # Completed = win=True or 5 guesses used
-    # -----------------------------
+   
     completed_games_today = 0
     games_today_list = Game.query.filter(Game.user_id == current_user.id, Game.date >= day_start).all()
     for g in games_today_list:
@@ -38,9 +33,7 @@ def play_game():
             previous_guesses=[]
         )
 
-    # -----------------------------
-    # Continue existing game or start new
-    # -----------------------------
+   
     game = None
     if 'current_game_id' in session:
         game = Game.query.get(session['current_game_id'])
@@ -72,9 +65,6 @@ def play_game():
     result_message = None
     result_category = None
 
-    # -----------------------------
-    # Handle guess submission
-    # -----------------------------
     if request.method == 'POST' and 'guess' in request.form:
         guess_word = request.form.get('guess', '').upper().strip()
 
@@ -103,9 +93,7 @@ def play_game():
                 result_category = "warning"
                 session.pop('current_game_id', None)
 
-    # -----------------------------
-    # Prepare previous guesses
-    # -----------------------------
+  
     previous_guess_objs = Guess.query.filter_by(game_id=game.id).order_by(Guess.id).all()
     display_guesses = []
     for g in previous_guess_objs:
@@ -123,10 +111,6 @@ def play_game():
         limit_reached=False
     )
 
-
-# -----------------------------
-# Finish Game (OK Button)
-# -----------------------------
 @login_required
 @game_bp.route('/game/finish', methods=['POST'])
 def finish_game():
