@@ -87,6 +87,11 @@ input:focus {
     outline: none;
 }
 
+input[name="guess"] {
+    text-transform: uppercase;
+}
+
+
 button {
     padding: 10px;
     font-size: 16px;
@@ -172,4 +177,82 @@ canvas.confetti {
     50% { transform: translateX(5px); }
     75% { transform: translateX(-5px); }
     100% { transform: translateX(0); }
+}
+/* OK button */
+.ok-btn.info {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s;
+}
+
+.ok-btn.info:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(108, 117, 125, 0.18);
+}
+
+/* Result messages */
+.result.success { color: #28a745; font-weight: 700; font-size: 1.1rem; }
+.result.warning { color: #fd7e14; font-weight: 700; font-size: 1.1rem; }
+.result.error { color: #c82333; font-weight: 700; font-size: 1.1rem; }
+
+/* Previous guesses */
+.guess-row {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.letter {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: lightgray;
+    transition: 0.3s;
+}
+
+.letter.green { background-color: #28a745; color: white; }
+.letter.orange { background-color: #fd7e14; color: white; }
+.letter.grey { background-color: #6c757d; color: white; }
+
+/* Landing page container */
+.landing-container {
+    width: 400px;
+    margin: 100px auto; /* center vertically */
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* Landing page buttons */
+.landing-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.button-link {
+    padding: 12px 25px;
+    background-color: #4a00e0;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.button-link:hover {
+    background-color: #8e2de2;
+    transform: translateY(-3px);
 }

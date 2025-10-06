@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess the Word - Landing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="landing-container">
+        <h1>🎯 Guess The Word</h1>
+        <p class="subtitle">Welcome! Please login or register to start playing.</p>
+
+        <div class="landing-buttons">
+            <a href="{{ url_for('auth.login') }}" class="button-link">Login</a>
+            <a href="{{ url_for('auth.register') }}" class="button-link">Register</a>
+        </div>
+    </div>
+</body>
+</html>
