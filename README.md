@@ -86,9 +86,14 @@ Maximum 5 guesses per game.
 Maximum 3 games per day.
 
 ## Admin Reports
-Navigate to /admin/daily for the daily report.
 
-Navigate to /admin/user to search and view reports for a specific user.
+- Admin functionality (reports for daily activity and user-wise reports) is implemented and tested.
+
+- For security reasons, admin credentials are not shared in this submission.
+
+- You can verify the functionality by creating a new admin user from the database or by reviewing the code 
+
+under `app/routes/admin.py` (or equivalent file).
 
 ## Tech Stack
 Backend: Python, Flask
@@ -133,6 +138,7 @@ Guess_The_Word/
 └── venv/
 
 ## Future Enhancements
+
 Deploy to Render or Railway for online access.
 
 Replace SQLite with PostgreSQL for scalability.
